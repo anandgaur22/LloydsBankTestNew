@@ -1,0 +1,121 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+}
+
+android {
+    namespace 'com.anand.presentation'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 27
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.includeAndroidResources = true
+
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.junit.ktx
+    implementation libs.androidx.ui.test.junit4.android
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    implementation platform(libs.androidx.compose.bom)
+    androidTestImplementation platform(libs.androidx.compose.bom)
+
+    implementation project(':domain')
+    implementation project(':core')
+
+
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.lifecycle.livedata
+
+    implementation libs.hilt.core
+    kapt libs.hilt.compiler
+
+    implementation libs.androidx.material3.android
+
+    implementation libs.androidx.hilt.navigation.compose.v100
+
+    testImplementation libs.mockito.core.v570
+    testImplementation libs.kotlin.test.junit
+
+    testImplementation libs.kotlinx.coroutines.test.v164
+    testImplementation libs.core.testing
+
+
+    // Compose testing dependencies
+    androidTestImplementation libs.ui.test.junit4
+    debugImplementation libs.ui.tooling
+    androidTestImplementation libs.ui.test.manifest
+
+    // Hilt testing dependencies
+    androidTestImplementation libs.hilt.android.testing
+    kaptAndroidTest libs.hilt.android.compiler.v244
+
+    // JUnit
+    testImplementation libs.junit
+
+    testImplementation libs.mockito.inline.v461
+
+
+    androidTestImplementation libs.androidx.junit
+
+    //testImplementation libs.robolectric
+
+
+    // Unit Test dependencies
+    testImplementation libs.robolectric
+
+    // Android Instrumentation Test dependencies
+    androidTestImplementation libs.mockito.android
+
+    androidTestImplementation libs.androidx.rules
+    androidTestImplementation libs.core
+
+    androidTestImplementation libs.androidx.runner
+    androidTestImplementation libs.mockito.android.v500
+    testImplementation libs.mockito.kotlin.v320
+
+}
