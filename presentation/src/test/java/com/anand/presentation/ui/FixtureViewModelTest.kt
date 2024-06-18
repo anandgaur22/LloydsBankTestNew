@@ -40,7 +40,7 @@ class FixtureViewModelTest {
 
         Mockito.`when`(fixtureRepository.getFixtures()).thenReturn(flow { emit(mockFixtures) })
 
-        fixtureViewModel = FixtureViewModel(fixtureRepository)
+       fixtureViewModel = FixtureViewModel(fixtureRepository)
     }
 
     @After

@@ -1,6 +1,5 @@
 package com.anand.data.network
 
-// Add these imports at the top of your file
 import com.anand.domain.model.Fixture
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
@@ -41,7 +40,7 @@ class ApiServiceTest {
     }
 
     @Test
-    fun testGetFixturesAPICall():Unit = runBlocking {
+    fun testGetFixturesAPICall(): Unit = runBlocking {
         // Test code
 
         // Prepare mock response data
@@ -58,12 +57,12 @@ class ApiServiceTest {
         // Call the API method
         val apiResponse = apiService.getFixtures("api_token")
 
-// Print the response body for debugging
+        // Print the response body for debugging
         println(apiResponse)
 
         assertNotNull(apiResponse)
 
-// Access properties of the response body only if it's not null
+        // Access properties of the response body only if it's not null
         apiResponse.data?.first()?.let { fixture ->
             // Assert that the fixture data matches the expected values
             assertEquals(1, fixture.id)

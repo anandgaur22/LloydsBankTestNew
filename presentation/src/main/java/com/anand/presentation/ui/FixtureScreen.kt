@@ -20,10 +20,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.anand.domain.model.Fixture
+import com.anand.presentation.R
 
 @Composable
 fun FixtureScreen(
@@ -66,15 +68,15 @@ fun FixtureItem(fixture: Fixture) {
             modifier = Modifier.padding(5.dp)
         ) {
             Text(
-                text = fixture.name ?: "Unknown",
-                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold, color = Color.Black) // Bold text
+                text = fixture.name ?: stringResource(R.string.unknown),
+                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold, color = Color.Black)
             )
             Text(
-                text = fixture.resultInfo ?: "No result info",
-                style = MaterialTheme.typography.bodyMedium.copy(color = Color.Red) // Bold text
+                text = fixture.resultInfo ?: stringResource(R.string.no_result_info),
+                style = MaterialTheme.typography.bodyMedium.copy(color = Color.Red)
             )
             Text(
-                text = fixture.startingAt ?: "Unknown date",
+                text = fixture.startingAt ?: stringResource(R.string.unknown_date),
                 style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
             )
         }

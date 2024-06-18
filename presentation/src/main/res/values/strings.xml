@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="unknown">Unknown</string>
+    <string name="no_result_info">No result info</string>
+    <string name="unknown_date">Unknown date</string>
+</resources>

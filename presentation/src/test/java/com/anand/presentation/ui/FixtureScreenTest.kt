@@ -49,31 +49,12 @@ class FixtureScreenTest {
         val isLoadingFlow = MutableStateFlow(true)
         val fixturesFlow = MutableStateFlow(emptyList<Fixture>())
 
-       /* val fakeViewModel = object : FixtureViewModel(fixtureRepository) {
-            override val isLoading: StateFlow<Boolean> = isLoadingFlow
-            override val fixtures: StateFlow<List<Fixture>> = fixturesFlow
-        }
-
-        composeTestRule.setContent {
-            FixtureScreen(viewModel = fakeViewModel)
-        }*/
-
-       // composeTestRule.onNodeWithText("Loading").assertExists()
     }
 
     @Test
     fun fixtureScreen_fixturesLoaded_displaysFixtures() {
         val isLoadingFlow = MutableStateFlow(false)
         val fixturesFlow = MutableStateFlow(mockFixtures)
-
-       /* val fakeViewModel = object : FixtureViewModel(fixtureRepository) {
-            override val isLoading: StateFlow<Boolean> = isLoadingFlow
-            override val fixtures: StateFlow<List<Fixture>> = fixturesFlow
-        }
-
-        composeTestRule.setContent {
-            FixtureScreen(viewModel = fakeViewModel)
-        }*/
 
         composeTestRule.onNodeWithText("Fixture 1").assertExists()
         composeTestRule.onNodeWithText("Fixture 2").assertExists()
