@@ -11,6 +11,7 @@ hiltAndroidTesting = "2.44"
 hiltAndroidTestingVersion = "2.40.5"
 hiltNavigationCompose = "1.0.0"
 hiltNavigationComposeVersion = "1.0.0-alpha03"
+javaxInject = "1"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -70,6 +71,7 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-android-testing-v2405 = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTestingVersion" }
 hilt-android-testing-v242 = { module = "com.google.dagger:hilt-android-testing", version.ref = "googleHiltAndroidTesting" }
 hilt-android-v242 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

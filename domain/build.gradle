@@ -47,4 +47,6 @@ dependencies {
     testImplementation libs.core.testing
     testImplementation libs.mockito.inline.v461
 
+    implementation libs.javax.inject
+
 }

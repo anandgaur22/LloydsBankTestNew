@@ -16,6 +16,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.anand.core.utils.Constants.Companion.APP_TITLE
 import com.anand.lloydtestnew.ui.theme.LloydTestNewTheme
 import com.anand.presentation.ui.FixtureScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +41,7 @@ fun MainScreen() {
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = "Fixtures")
+                    Text(text = APP_TITLE)
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,

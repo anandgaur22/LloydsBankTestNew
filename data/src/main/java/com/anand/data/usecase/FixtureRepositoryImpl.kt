@@ -1,6 +1,7 @@
-package com.anand.data.repository
+package com.anand.data.usecase
 
 
+import com.anand.core.utils.Constants.Companion.API_KEY
 import com.anand.data.network.ApiService
 import com.anand.data.mapper.toDomain
 import com.anand.domain.model.Fixture
@@ -13,7 +14,7 @@ class FixtureRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : FixtureRepository {
     override fun getFixtures(): Flow<List<Fixture>> = flow {
-        val response = apiService.getFixtures("keyEiMaINIuVi3fy3Nz0skrVYS0eVAxfk56Z8YYys56FX6djsd2xqeBzhQd6")
+        val response = apiService.getFixtures(API_KEY)
         emit(response.data.map { it.toDomain() })
     }
 }
