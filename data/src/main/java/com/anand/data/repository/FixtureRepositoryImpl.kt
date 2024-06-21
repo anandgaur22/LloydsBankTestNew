@@ -1,4 +1,4 @@
-package com.anand.data.usecase
+package com.anand.data.repository
 
 
 import com.anand.core.utils.Constants.Companion.API_KEY

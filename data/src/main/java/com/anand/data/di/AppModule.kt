@@ -1,6 +1,6 @@
-package com.anand.lloydtestnew.di
+package com.anand.data.di
 
-import com.anand.data.usecase.FixtureRepositoryImpl
+import com.anand.data.repository.FixtureRepositoryImpl
 import com.anand.domain.repository.FixtureRepository
 import dagger.Binds
 import dagger.Module
