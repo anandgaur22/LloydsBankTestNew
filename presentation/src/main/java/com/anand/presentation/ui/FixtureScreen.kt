@@ -82,8 +82,3 @@ fun FixtureItem(fixture: Fixture) {
         }
     }
 }
-
-
-
-
-

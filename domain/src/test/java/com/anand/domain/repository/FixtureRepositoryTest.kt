@@ -1,7 +1,7 @@
 package com.anand.domain.repository
 
 import com.anand.domain.model.Fixture
-import com.anand.domain.repository.FixtureRepository
+import com.anand.data.repository.FixtureRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -17,7 +17,7 @@ import org.mockito.MockitoAnnotations
 class FixtureRepositoryTest {
 
     @Mock
-    private lateinit var fixtureRepository: FixtureRepository
+    private lateinit var fixtureRepository: com.anand.data.repository.FixtureRepository
 
     private val sampleFixtures = listOf(
         Fixture(1, "Fixture 1", "Result 1", "2024-06-11"),
